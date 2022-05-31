@@ -19,6 +19,7 @@ const y180Quaternion = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3
 const hitSpeed = 6;
 
 export default e => {
+  const appType = "mob";
   const app = useApp();
   const {renderer, scene, camera} = useInternals();
   const physics = usePhysics();
