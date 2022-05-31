@@ -1,5 +1,8 @@
 {
   "name": "silkworm-Runner",
   "description": "fast silkworm variant",
-  "start_url": "silkworm-runner.mob"
+  "start_url": "silkworm-runner.mob"  
+  "components": {
+    "activate": true
+  }
 }
