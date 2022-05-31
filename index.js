@@ -26,16 +26,16 @@ export default e => {
   // const {WebaverseShaderMaterial} = useMaterials();
   // const Text = useTextInternal();
 
-  let silkWorm = null;
+  let silkWorm-runner = null;
   const speed = 0.03;
   const angularSpeed = 0.02;
   (async () => {
     silkWorm = await metaversefile.createAppAsync({
-      start_url: `${baseUrl}silkworm_v1_fleeky.glb`,
+      start_url: `${baseUrl}silkworm_runner_v1_fleeky.glb`,
     });
-    silkWorm.quaternion.copy(y180Quaternion);
-    silkWorm.frustumCulled = false;
-    app.add(silkWorm);
+    silkWorm-runner.quaternion.copy(y180Quaternion);
+    silkWorm-runner.frustumCulled = false;
+    app.add(silkWorm-runner);
     // window.silkWorm = silkWorm;
   })();
 
@@ -77,7 +77,7 @@ export default e => {
     quaternion.setFromEuler(localEuler);
   };
 
-  let silkWormAction = null;
+  let silkWorm-runnerAction = null;
   const targetPositionAction = () => {
     const range = 10;
     const targetPosition = app.position.clone()
@@ -180,26 +180,26 @@ export default e => {
     targetPositionAction,
     targetQuaternionAction,
   ];
-  const _chooseSilkWormAction = () => {
+  const _chooseSilkWorm-runnerAction = () => {
     const actionOption = chooseActionOptions[Math.floor(Math.random() * chooseActionOptions.length)];
     return actionOption();
   };
 
   // let running = false;
   useFrame(({timestamp}) => {
-    if (silkWorm) {
+    if (silkWorm-runner) {
       // running = true;
 
       for (;;) {
         // console.log('tick');
 
-        if (!silkWormAction) {
-          silkWormAction = _chooseSilkWormAction();
+        if (!silkWorm-runnerAction) {
+          silkWorm-runnerAction = _chooseSilkWorm-runnerAction();
         }
-        if (silkWormAction.update(timestamp)) {
+        if (silkWorm-runnerAction.update(timestamp)) {
           break;
         } else {
-          silkWormAction = null;
+          silkWorm-runnerAction = null;
         }
       }
 
@@ -236,7 +236,7 @@ export default e => {
     hitVelocity.y = 0.5 + Math.random();
     hitVelocity.normalize().multiplyScalar(hitSpeed);
 
-    silkWormAction = hitAction(hitDirectionXZ, hitVelocity);
+    silkWorm-runnerAction = hitAction(hitDirectionXZ, hitVelocity);
   });
 
   const physicsIds = [];
