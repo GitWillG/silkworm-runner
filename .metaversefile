@@ -1,4 +1,5 @@
 {
   "name": "silkworm-runner",
+  "description": "fast silkworm variant"
   "start_url": "silkworm-runner.mob"
 }
